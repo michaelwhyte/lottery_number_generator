@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lottery Number Generator</title>
+</head>
+
+<body>
+
+<h1>Generate 6 Lottery Numbers between 1 and 49</h1>
+
+<p id="out"></p>
+
+<script>
+var out = document.getElementById('out');
+var picks = 6;
+var maxNum = 49;
+var numArray = [];
+var lotteryPicks = [];
+
+for(var i=1; i<= maxNum; i++) {
+   numArray.push(i);
+};
+
+for(var i = 1; i <= picks; i++){
+	var numArrayLength = numArray.length;
+	var currentNumber = Math.floor(Math.random() * numArrayLength);
+	var pickedNumber = numArray.splice(currentNumber,1);
+	if(i < 6){
+	 	out.innerHTML += pickedNumber + ', ';
+	}else{
+		out.innerHTML += pickedNumber;	
+	};
+};
+</script>
+
+</body>
+</html>
